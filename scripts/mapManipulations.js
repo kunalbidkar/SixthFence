@@ -13,7 +13,7 @@
         Graphic, Color
       ) {
         map = new Map("map", {
-          basemap: "oceans",
+          basemap: "streets",
           center: [-85.957, 17.140],
           zoom: 2
         });
