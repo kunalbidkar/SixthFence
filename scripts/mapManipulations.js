@@ -35,7 +35,9 @@
         function initFunc(map) {
           if( navigator.geolocation ) {  
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
+            console.log(navigator.geolocation.getCurrentPosition(zoomToLocation, locationError));
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
+            console.log('The watch Id is ', watchId);
           } else {
             alert("Browser doesn't support Geolocation. Visit http://caniuse.com to see browser support for the Geolocation API.");
           }
@@ -80,6 +82,12 @@
             addGraphic(pt);
           } else { // move the graphic if it already exists
             graphic.setGeometry(pt);
+            
+            console.log('The geometry changed is ', pt.x, 'and ', pt.y);
+             map.infoWindow.setContent('Your latitude is '+pt.x+ ' and longitude is '+ pt.y);
+            map.infoWindow.setTitle('Your location');
+            map.infoWindow.show(pt);
+
           }
           map.centerAt(pt);
         }
@@ -101,8 +109,7 @@
 
           map.graphics.on("click", myGraphicsClickHandler);
       function myGraphicsClickHandler(evt) {
-   console.log('The latitude is ',evt.graphic.attributes.x);
-   console.log('The longitude is ',evt.graphic.attributes.y);
+
     map.infoWindow.setContent('The latitude is '+evt.graphic.attributes.x+ ' and longitude is '+ evt.graphic.attributes.y);
             map.infoWindow.setTitle('Your location');
             map.infoWindow.show(pt);
@@ -111,8 +118,5 @@
 
          // graphicsLayer.add(graphic);
          // map.addLayer(graphicsLayer);
-        }
-
-
-        
+        }    
       });
