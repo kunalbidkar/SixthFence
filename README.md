@@ -2,7 +2,7 @@
 
 ## Problem Definition
 
-This application is divided into two parts. 
+This application is divided into two parts. <br />
 Part A - Generate popups to the user about the point of interests near him in a park as his location updates. (Location simulated with few pre-defined latitude and longitude points. The application runs through a script that loops through the points which checks if the current location lies within the boundary of point of interests co-cordinates and if the location comes in the boundary, generate a Popup / Infowindow)
 Part B - User notification via email to the registered users about any alert/accident at a certain point in the park. (Ex: Wild animal spotted in the park, so you wish to update visitors through an email alert to avoid them visting that area for their safety.
 
