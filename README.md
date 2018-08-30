@@ -29,7 +29,7 @@ A step by step series of examples that tell you how to get a development env run
 -Once you enter this URL, a logo will appear for 3 seconds (splash screen) and then it will be redirected to index.html
 
 ## Demo
-![alt text](https://ibb.co/cVWLnp)
+![alt text](https://raw.githubusercontent.com/kunalbidkar/SixthFence.github.io/master/sf.gif)
 
 ## Technologies Used
 
