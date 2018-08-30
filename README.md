@@ -42,9 +42,9 @@ A step by step series of examples that tell you how to get a development env run
  
 ## Authors
 
-* **Kunal Bidkar, Developer ** 
-* **Jen Kern, Geographer and media creator ** 
-* **Joe Efenecy, Geographer and spearhead of GeoEvent ** 
+* Kunal Bidkar, Developer
+* Jen Kern, Geographer and media creator 
+* Joe Efenecy, Geographer and spearhead of GeoEvent 
 
 ## Acknowledgments
 
