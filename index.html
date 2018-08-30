@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-
-
 <html>
-
-
 <head>
-
 	<meta http-equiv="Content-Type"
 		content="text/html; charset=utf-8">
-
-
 	<meta name="viewport"
 		content="initial-scale=1, maximum-scale=1,user-scalable=no">
-
-	<title>Simple Map</title>
+	<title>Sixth Fence</title>
 	<link rel="stylesheet" href="https://js.arcgis.com/3.25/dijit/themes/claro/claro.css">
 	<link rel="stylesheet"
 		href="https://js.arcgis.com/3.25/esri/css/esri.css">
-
-
 	<style>
 		html,
 		body,
@@ -35,7 +25,6 @@
 		}
 	</style>
 	<script src="https://js.arcgis.com/3.25/">
-
 	</script>
 
 	<script>
@@ -87,11 +76,12 @@
 			parser.parse();
 			map = new Map("map", {
 				basemap: "streets", //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
-				center: [-81.01343, 35.098484], // longitude, latitude
+				center: [-81.02343, 35.098884], // longitude, latitude
 				zoom: 16
 			});
-			
-			//map.on("load", initEditor);
+
+			var baseMap= new esri.layers.ArcGISTiledMapServiceLayer("https://services8.arcgis.com/LLNIdHmmdjO2qQ5q/arcgis/rest/services/UserEngagement_IOE/FeatureServer/0");
+			map.addLayer(baseMap); 
 
 			var welcomeMessage = false;
 			var featureLayer1 = new FeatureLayer(
@@ -170,7 +160,7 @@
 				"https://services8.arcgis.com/LLNIdHmmdjO2qQ5q/arcgis/rest/services/IOE/FeatureServer/10"
 			);
 			
-			var reportFL = new FeatureLayer("https://services8.arcgis.com/LLNIdHmmdjO2qQ5q/arcgis/rest/services/UserEngagements_IOE/FeatureServer/0",{outFields: ['*']});
+			var reportFL = new FeatureLayer("https://services8.arcgis.com/LLNIdHmmdjO2qQ5q/arcgis/rest/services/UserEngagement_IOE/FeatureServer/0",{outFields: ['*']});
 			reportFL.on("load", initEditor);
 			map.addLayer(reportFL);
 
@@ -194,165 +184,164 @@
 				12,
 				new SimpleLineSymbol(
 					SimpleLineSymbol.STYLE_SOLID,
-					new Color([210, 105, 30, 0.5]),
+					new Color([111,163,255, 0.5]),
 					8
 				),
-				new Color([210, 105, 30, 0.9])
+				new Color([111,163,255, 0.9])
 			);
 
 			var points = [
 				[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02477812,35.09420569],
-[-81.02447389,35.09419013],
-[-81.02403656,35.0941279],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.02386543,35.09450128],
-[-81.0238274,35.09471909],
-[-81.02375135,35.09490578],
-[-81.02367529,35.09510803],
-[-81.02367767,35.09524805],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02375491,35.09544738],
-[-81.02379056,35.0955203],
-[-81.02386187,35.09560781],
-[-81.02398071,35.09584604],
-[-81.02400448,35.09604051],
-[-81.02399853,35.09613774],
-[-81.02388564,35.09628359],
-[-81.02384404,35.09634193],
-[-81.02354694,35.09646347],
-[-81.0234697,35.09651209],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02328549,35.0965996],
-[-81.02314883,35.09665794],
-[-81.02301216,35.09676003],
-[-81.02298245,35.09682323],
-[-81.02288144,35.0969788],
-[-81.02280419,35.09706631],
-[-81.02272101,35.09725105],
-[-81.0226913,35.09734829],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02264376,35.09747955],
-[-81.02260217,35.09753303],
-[-81.02253086,35.09772749],
-[-81.02247144,35.09790251],
-[-81.02237637,35.09799001],
-[-81.02230507,35.09812128],
-[-81.02221594,35.09818448],
-[-81.02203173,35.09827198],
-[-81.02193072,35.09836921],
-[-81.02173463,35.09849561],
-[-81.02163956,35.09860743],
-[-81.02151478,35.09878731],
-[-81.02148507,35.09886995],
-[-81.02144942,35.09909844],
-[-81.02148507,35.09920053],
-[-81.02153261,35.09939985],
-[-81.02156232,35.0994825],
-[-81.0216871,35.09974016],
-[-81.02172869,35.09981794],
-[-81.02181188,35.10000267],
-[-81.02183565,35.10011935],
-[-81.02199608,35.10036242],
-[-81.02208521,35.10042076],
-[-81.02230507,35.10056174],
-[-81.02245337,35.10062294],
-[-81.02245362,35.10092659],
-[-81.02245362,35.10107243],
-[-81.02237043,35.10141272],
-[-81.02225159,35.10155856],
-[-81.02212086,35.10185997],
-[-81.02216139,35.10204635],
-[-81.02259955,35.10197271],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02278514,35.10194175],
-[-81.02294563,35.10173601],
-[-81.02313335,35.10163753],
-[-81.02359984,35.10163151],
-[-81.02410061,35.1017826],
-[-81.02439089,35.1018994],
-[-81.02459467,35.10216285],
-[-81.02503461,35.10219938],
-[-81.02546749,35.10252181],
-[-81.02560377,35.10285447],
-[-81.02567474,35.10311737],
-[-81.025282,35.10331835],
-[-81.02488983,35.10339613],
-[-81.02464819,35.1035828 ],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02448657,35.10368392],
-[-81.02462442,35.10375392],
-[-81.0247195,35.10382003],
-[-81.0248621,35.10394448],
-[-81.02500471,35.10411948],
-[-81.02515207,35.10427115],
-[-81.02526616,35.10445393],
-[-81.02530894,35.1046056],
-[-81.02540401,35.10473005],
-[-81.02539451,35.10487782],
-[-81.02533271,35.10502171],
-[-81.02524714,35.10516171],
-[-81.02505225,35.10527838],
-[-81.02499996,35.10530949],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.02489914,35.10536487],
-[-81.0246377,35.1054232],
-[-81.0245248,35.10543292],
-[-81.02438219,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292],
-[-81.02419799,35.10543292]
+				[-81.02477812,35.09420569],
+				[-81.02477812,35.09420569],
+				[-81.02477812,35.09420569],
+				[-81.02477812,35.09420569],
+				[-81.02477812,35.09420569],
+				[-81.02477812,35.09420569],
+				[-81.02447389,35.09419013],
+				[-81.02403656,35.0941279],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.02386543,35.09450128],
+				[-81.0238274,35.09471909],
+				[-81.02375135,35.09490578],
+				[-81.02367529,35.09510803],
+				[-81.02367767,35.09524805],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02375491,35.09544738],
+				[-81.02379056,35.0955203],
+				[-81.02386187,35.09560781],
+				[-81.02398071,35.09584604],
+				[-81.02400448,35.09604051],
+				[-81.02399853,35.09613774],
+				[-81.02388564,35.09628359],
+				[-81.02384404,35.09634193],
+				[-81.02354694,35.09646347],
+				[-81.0234697,35.09651209],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02328549,35.0965996],
+				[-81.02314883,35.09665794],
+				[-81.02301216,35.09676003],
+				[-81.02298245,35.09682323],
+				[-81.02288144,35.0969788],
+				[-81.02280419,35.09706631],
+				[-81.02272101,35.09725105],
+				[-81.0226913,35.09734829],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02264376,35.09747955],
+				[-81.02260217,35.09753303],
+				[-81.02253086,35.09772749],
+				[-81.02247144,35.09790251],
+				[-81.02237637,35.09799001],
+				[-81.02230507,35.09812128],
+				[-81.02221594,35.09818448],
+				[-81.02203173,35.09827198],
+				[-81.02193072,35.09836921],
+				[-81.02173463,35.09849561],
+				[-81.02163956,35.09860743],
+				[-81.02151478,35.09878731],
+				[-81.02148507,35.09886995],
+				[-81.02144942,35.09909844],
+				[-81.02148507,35.09920053],
+				[-81.02153261,35.09939985],
+				[-81.02156232,35.0994825],
+				[-81.0216871,35.09974016],
+				[-81.02172869,35.09981794],
+				[-81.02181188,35.10000267],
+				[-81.02183565,35.10011935],
+				[-81.02199608,35.10036242],
+				[-81.02208521,35.10042076],
+				[-81.02230507,35.10056174],
+				[-81.02245337,35.10062294],
+				[-81.02245362,35.10092659],
+				[-81.02245362,35.10107243],
+				[-81.02237043,35.10141272],
+				[-81.02225159,35.10155856],
+				[-81.02212086,35.10185997],
+				[-81.02216139,35.10204635],
+				[-81.02259955,35.10197271],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02278514,35.10194175],
+				[-81.02294563,35.10173601],
+				[-81.02313335,35.10163753],
+				[-81.02359984,35.10163151],
+				[-81.02410061,35.1017826],
+				[-81.02439089,35.1018994],
+				[-81.02459467,35.10216285],
+				[-81.02503461,35.10219938],
+				[-81.02546749,35.10252181],
+				[-81.02560377,35.10285447],
+				[-81.02567474,35.10311737],
+				[-81.025282,35.10331835],
+				[-81.02488983,35.10339613],
+				[-81.02464819,35.1035828 ],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02448657,35.10368392],
+				[-81.02462442,35.10375392],
+				[-81.0247195,35.10382003],
+				[-81.0248621,35.10394448],
+				[-81.02500471,35.10411948],
+				[-81.02515207,35.10427115],
+				[-81.02526616,35.10445393],
+				[-81.02530894,35.1046056],
+				[-81.02540401,35.10473005],
+				[-81.02539451,35.10487782],
+				[-81.02533271,35.10502171],
+				[-81.02524714,35.10516171],
+				[-81.02505225,35.10527838],
+				[-81.02499996,35.10530949],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.02489914,35.10536487],
+				[-81.0246377,35.1054232],
+				[-81.0245248,35.10543292],
+				[-81.02438219,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292],
+				[-81.02419799,35.10543292]
 			];
 
 			i = 0;
 			setInterval(function() {
 				map.graphics.clear();
 				if (i < points.length) {
-					//console.log(points[i]);
 
 					graphic = new Graphic(new Point(points[i]), symbol);
 					map.graphics.add(graphic);
@@ -371,7 +360,6 @@
 					query.outFields = ["*"];
 
 					for (var j = 0; j < featureLayerArray.length; j++) {
-						//console.log(featureLayerArray[j].url);
 						var queryTask = new QueryTask(featureLayerArray[j].url);
 
 						queryTask.execute(query, success, fail);
@@ -396,50 +384,39 @@
 				{
 					if(pointInfoWindowChecker==undefined){
 						parkWelcome = true;
-						//console.log(response);
-						map.infoWindow.setTitle("You have found something EXCITING!");
-						map.infoWindow.setContent("You have found "+ response.features[0].attributes.Name + "<br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript + "<br> <img src=" + response.features[0].attributes.Image + " height='100' width='100'></img>");
+						map.infoWindow.setTitle("Something Exciting");
+						map.infoWindow.resize(160,250);
+						map.infoWindow.setContent('<div style="width: 100%; text-align: center"><div style="display:inline; text-align: center"><center><img src=' + response.features[0].attributes.Image + " height=70 width=115></img></center><hr></hr></div>"+ 'You have found ' + response.features[0].attributes.Name +  " <br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript+"</div>");
 						map.infoWindow.show(new Point(currentPointX,currentPointY));
 						pointInfoWindowChecker=response.features[0].attributes.Name;
 						console.log("This is the current value of ",pointInfoWindowChecker);
-						if(pointInfoWindowChecker=="Cardinal"){
-							console.log("I am inside Cardinal");
-							map.infoWindow.setTitle("You have found something EXCITING!");
-							map.infoWindow.setContent("You have found "+ response.features[0].attributes.Name + "<br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript + "<br> <img src=" + response.features[0].attributes.Image + " height='100' width='100'></img>");
-							map.infoWindow.show(new Point(currentPointX,currentPointY));
-							pointInfoWindowChecker=response.features[0].attributes.Name;
-							counter =1;
-						}
 					}
-					
-				
 					else{
 						if(counter==0 && pointInfoWindowChecker=="Cardinal"){
 							parkWelcome = true;
 						console.log(response);
-						map.infoWindow.setTitle("You have found something EXCITING!");
-						map.infoWindow.setContent("You have found "+ response.features[0].attributes.Name + "<br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript + "<br> <img src=" + response.features[0].attributes.Image + " height='100' width='100'></img>");
+						map.infoWindow.setTitle("Something Exciting!");
+						map.infoWindow.resize(160,250);
+						map.infoWindow.setContent('<div style="width: 100%; text-align: center"><div style="display:inline; text-align: center"><center><img src=' + response.features[0].attributes.Image + " height=70 width=115></img></center><hr></hr></div>"+ 'You have found ' + response.features[0].attributes.Name +  "<br>  It's scientific name is " + response.features[0].attributes.Scientific + "<br>The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript+"</div>");
 						map.infoWindow.show(new Point(currentPointX,currentPointY));
 						pointInfoWindowChecker=response.features[0].attributes.Name;	
 						counter =1;
 			
 						}
 						else{
-
 						}
 						parkWelcome = true;
 						console.log(response);
-						map.infoWindow.setTitle("You have found something EXCITING!");
-						map.infoWindow.setContent("You have found "+ response.features[0].attributes.Name + "<br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript + "<br> <img src=" + response.features[0].attributes.Image + " height='100' width='100'></img>");
+						map.infoWindow.setTitle("Something Exciting");
+						map.infoWindow.resize(160,250);
+						map.infoWindow.setContent('<div style="width: 100%; text-align: center"><div style="display:inline; text-align: center"><center><img src=' + response.features[0].attributes.Image + " height=70 width=115></img></center><hr></hr></div>"+ 'You have found ' + response.features[0].attributes.Name +  "<br> It's scientific name is " + response.features[0].attributes.Scientific + "<br> The " + response.features[0].attributes.Name + " is " + response.features[0].attributes.Descript+"</div>");
 						map.infoWindow.show(new Point(currentPointX,currentPointY));
 						pointInfoWindowChecker=response.features[0].attributes.Name;	
 						counter =1;
-					}
-					
+					}	
 				}
 				}	
 			
-
 			function fail(error) {
 				console.log(error);
 			}
@@ -457,7 +434,6 @@
 					layerInfos: [{featureLayer: layer.layer}],
 					toolbarVisible: true
 				}
-				
 				var params = {settings: settings}
 				var editor = new Editor(params, "editorDiv");
 				
@@ -472,9 +448,7 @@
 				}, "legendDiv");
 				
 				legend.startup();
-			}
-
-			
+			}	
 		});
 
 	</script>
